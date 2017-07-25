@@ -7,3 +7,7 @@ Tomcat Web Server with web socket endpoint.
 mvn package
 target\bin\webapp
 ```
+Open browser to 
+http://localhost:8080/ 
+
+
