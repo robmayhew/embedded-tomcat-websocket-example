@@ -1,0 +1,30 @@
+<html>
+<head>
+    <script>
+        function go(){
+            print("Start");
+            var exampleSocket = new WebSocket("ws://localhost:8080/echo");
+
+            exampleSocket.onopen = function (event) {
+                print("Opened")
+                exampleSocket.send("Testing");
+            };
+            exampleSocket.onmessage = function (event) {
+                print(event.data);
+            };
+
+        }
+
+        function print(s)
+        {
+            var  p = document.createElement("p");
+            p.innerText = s;
+            document.getElementById("output").appendChild(p);
+        }
+    </script>
+</head>
+<body onload="go()">
+Output:
+<div id="output"></div>
+</body>
+</html>
